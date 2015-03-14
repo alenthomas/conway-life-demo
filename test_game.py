@@ -9,3 +9,9 @@ def test_create_board():
     assert b.cells == [[0,0], [0,0], [0,0]]
     b = Board((2,3), [])
     assert b.cells == [[0,0,0], [0,0,0]]
+
+def test_create_nonempty_board():
+    b = Board((4,4), [[1,1], [3,0]])
+    assert b.cells == [[0,0,0,0], [0,1,0,0], [0,0,0,0], [1,0,0,0]]
+
+    
