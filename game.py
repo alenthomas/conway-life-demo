@@ -31,3 +31,16 @@ class Board(object):
                     pass
         return (live, dead)
     
+
+    def state(self):
+        ret = []
+        for i in self.cells:
+            row = []
+            for j in i:
+                if j == 1:
+                    row.append(True)
+                else:
+                    row.append(False)
+            ret.append(row)
+        return ret
+            
