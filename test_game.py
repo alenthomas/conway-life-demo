@@ -38,3 +38,10 @@ def test_corner_neighbours():
 def test_edge_neighbours():
     b = Board((4,4), [])
     assert b.neighbours(3,2) == (0, 5)
+
+def test_state():
+    b = Board((4,4), [[1,1], [2,2], [3,3]])
+    assert b.state() == [[False, False, False, False],
+                         [False, True, False, False],
+                         [False, False, True, False],
+                         [False, False, False, True]]
