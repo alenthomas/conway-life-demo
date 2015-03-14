@@ -1,4 +1,5 @@
 class Board(object):
     def __init__(self, size, live_cells):
-        self.cells = [[0,0,0,0], [0,0,0,0], [0,0,0,0], [0,0,0,0]]
+        x,y = size
+        self.cells = [[0] * y] * x
     
