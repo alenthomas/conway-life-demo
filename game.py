@@ -20,9 +20,14 @@ class Board(object):
             for j in range(y-1, y+2):
                 if i == x and j == y:
                     continue
-                if self.cells[i][j] == 1:
-                    live += 1
-                if self.cells[i][j] == 0:
-                    dead += 1
+                if i < 0 or j < 0:
+                    continue
+                try:
+                    if self.cells[i][j] == 1:
+                        live += 1
+                    if self.cells[i][j] == 0:
+                        dead += 1
+                except IndexError:
+                    pass
         return (live, dead)
     
