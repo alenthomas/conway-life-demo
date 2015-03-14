@@ -37,10 +37,7 @@ class Board(object):
         for i in self.cells:
             row = []
             for j in i:
-                if j == 1:
-                    row.append(True)
-                else:
-                    row.append(False)
+                row.append(bool(j))
             ret.append(row)
         return ret
             
