@@ -31,5 +31,6 @@ def test_center_neighbours():
 
     
     
-
-    
+def test_corner_neighbours():
+    b = Board((4,4), [])
+    assert b.neighbours(3,0) == (0, 3)
