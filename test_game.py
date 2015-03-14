@@ -24,6 +24,10 @@ def test_get():
 def test_center_neighbours():
     b = Board((4,4), [])
     assert b.neighbours(1,1) == (0, 8)
+    b = Board((4,4), [[0,0]])
+    assert b.neighbours(1,1) == (1, 7)
+    b = Board((4,4), [[1,0], [0,0]])
+    assert b.neighbours(1,1) == (2, 6)
 
     
     
