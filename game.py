@@ -14,8 +14,7 @@ class Board(object):
             return False
             
     def neighbours(self, x, y):
-        live = 0
-        dead = 0
+        live = dead = 0
         for i in range(x-1, x+2):
             for j in range(y-1, y+2):
                 if i == x and j == y:
