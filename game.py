@@ -7,4 +7,10 @@ class Board(object):
         for x,y in live_cells:
             self.cells[x][y] = 1
 
+    def get(self, x, y):
+        if self.cells[x][y] == 1:
+            return True
+        else:
+            return False
+            
     
