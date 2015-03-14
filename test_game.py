@@ -1,4 +1,4 @@
-from game import Board
+from game import Board, apply_rules
 
 def test_create_board():
     b = Board((4,4), [])

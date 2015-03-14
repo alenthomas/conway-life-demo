@@ -1,6 +1,7 @@
 class Board(object):
     def __init__(self, size, live_cells):
         x,y = size
+        self.size = size
         self.cells = []
         for i in range(x):
             self.cells.append([0] * y)
@@ -39,4 +40,17 @@ class Board(object):
                 row.append(bool(j))
             ret.append(row)
         return ret
+
             
+def apply_rules(board):
+    size = board.size
+    live_cells = []
+    # 1. A live cell will die if it has less than 2 neighbours
+    for ri, row in enumerate(board.cells):
+        for ci, column in enumerate(row):
+            if board.get(ri, ci) and board.neighbours(ri, ci)[0] < 2:
+                pass
+    return Board(size, live_cells)
+        
+    
+    
