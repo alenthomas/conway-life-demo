@@ -20,4 +20,12 @@ def test_get():
     assert b.get(1,1) == True
     assert b.get(0,0) == False
 
+
+def test_center_neighbours():
+    b = Board((4,4), [])
+    assert b.neighbours(1,1) == (0, 8)
+
+    
+    
+
     
