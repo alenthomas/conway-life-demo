@@ -1,7 +1,6 @@
 from string import strip, split
 from game import *
 from sys import argv
-from pprint import pprint
 # parse input file
 def parse_input_file(filename):
     f = open(filename)
@@ -37,17 +36,12 @@ def format_board(bboard):
 def user_interface():
 
     x, y = parse_input_file(argv[1])
-    #print x
-    #print y
     board = Board(x, y)
-    nxt_board = apply_rules(board)
-    print_board(nxt_board.state())
-    #print format_board(nxt_board.state())
-    #pprint(vars(board.state))
-#    print_board(board.state)
     while True:
         raw_input("")
-        print_board(nxt_board.state())
+        b_board =  apply_rules(board)
+        print format_board(b_board.state())
+        board = b_board
 
 if __name__ == '__main__':
     user_interface()
