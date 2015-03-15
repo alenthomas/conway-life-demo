@@ -8,4 +8,5 @@ def test_parse_input_file():
 def test_format_board():
      ls = [[0,2], [1,2], [2, 0], [2, 1]]
      st = ('..*.','..*.','**..','...*')
-     assert format_board(ls) == st
+     x, y = 4,4
+     assert format_board((x,y), ls) == st
