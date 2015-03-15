@@ -59,8 +59,19 @@ def test_apply_rules_rule1():
 
 
 
-
+def test_apply_rules_rule2():
     # 2. A live cell will remain alive if it has 2 or 3 neighbours
+    # 0...
+    # 00..
+    # ....
+    # ....
+    # all three cells will live
+    b0 = Board((4,4), [[0, 0], [1, 0], [1, 1]])
+    b1 = apply_rules(b0)
+    assert b1.get(0, 0) is True
+
+
+
     # 3. A live cell will die if it has more than 3 neighbours
     # 4. A dead cell will come alive if it has exactly 3 neighbours
     
