@@ -1,0 +1,35 @@
+#+TITLE: Comments
+
+* Commits
+  - Be very specific. ("Adds ignore files for library folders" is a bad commit message)
+  - No "and" in commit messages. One commit, one change. Don't bundle
+    multiple changes into a single commit.
+  - Write the "why" in the commit message. Not the "what". People can
+    see that directly from the diff.
+  - Always add all files related to a commit when
+    committing. e.g. 769480a should have added the test_input_file.txt
+    to the commit.
+  - "Adds interface to parse file" is not a good commit message. A
+    better one would be "Implements parse_input_file".
+
+
+* Code
+  - Absolutely no comments which contradict code
+  - Try to avoid redundant comments (like x++; // increments x by 1)
+  - The parse_input_file function could be shorter. Use python idioms
+
+        def parse_input_file(fname):
+           f = open(fname)
+           size = map(int, f.readline().strip().split("x"))
+           live_cells = []
+           for cell in f:
+             live_cells.append(map(int, cell.strip().split(',')))
+           return size, live_cells
+
+  - The += operator is not very efficient for python strings. Use
+    ''.join to combine a list of stings into a single string.
+    
+
+* Things to try
+  - Get rid of the bad commits (6f54375, b511d36 2b236ad). Explore the 
+    git rebase -i command.
