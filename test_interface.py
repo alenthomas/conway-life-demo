@@ -12,4 +12,4 @@ def test_format_board():
           [False, False, False, True]]
     st = ('....','.*..','..*.','...*')
     x, y = 4,4
-    assert format_board((x,y), ls) == st
+    assert format_board(ls) == st
