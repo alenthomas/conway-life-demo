@@ -49,7 +49,9 @@ def apply_rules(board):
     # 2. A live cell will live on if it has 2 or 3 neighbour
     for ri, row in enumerate(board.cells):
         for ci, column in enumerate(row):
-            if board.get(ri, ci) and board.neighbours(ri, ci)[0] in [2,3]:
+            if board.get(ri, ci) and board.neighbours(ri, ci)[0] in [2,3]: # rule 2
+                live_cells.append([ri, ci])
+            elif board.get(ri, ci) == False and board.neighbours(ri, ci)[0] == 3: # rule 4
                 live_cells.append([ri, ci])
     return Board(size, live_cells)
         
