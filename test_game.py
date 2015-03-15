@@ -83,7 +83,13 @@ def test_apply_rules_rule3():
     b1 = apply_rules(b0)
     assert b1.get(1,1) is False
 
-
-
+def test_apply_rules_rule4():
     # 4. A dead cell will come alive if it has exactly 3 neighbours
-    
+    # 0...
+    # .0..
+    # 0...
+    # ....
+    # the cell at 1,0 should come alive
+    b0 = Board((4,4), [[0, 0], [1, 1], [2, 0]])
+    b1 = apply_rules(b0)
+    assert b1.get(1, 0) is True
