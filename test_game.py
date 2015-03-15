@@ -72,6 +72,18 @@ def test_apply_rules_rule2():
     assert b1.get(1, 1) is True
 
 
+def test_apply_rules_rule3():
     # 3. A live cell will die if it has more than 3 neighbours
+    # 0...
+    # 000.
+    # ..0.
+    # ....
+    # the cell at 1,1 should die
+    b0 = Board((4,4), [[0, 0], [1, 0], [1, 1], [1, 2], [2, 2]])
+    b1 = apply_rules(b0)
+    assert b1.get(1,1) is False
+
+
+
     # 4. A dead cell will come alive if it has exactly 3 neighbours
     
