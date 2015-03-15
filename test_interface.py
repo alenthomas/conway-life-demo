@@ -10,6 +10,5 @@ def test_format_board():
           [False, True, False, False],
           [False, False, True, False],
           [False, False, False, True]]
-    st = ('....','.*..','..*.','...*')
-    x, y = 4,4
+    st = "....\n.*..\n..*.\n...*\n"
     assert format_board(ls) == st
