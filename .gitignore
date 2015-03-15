@@ -2,3 +2,9 @@
 __pycache__/
 *.pyc
 .coverage
+bin
+htmlcov
+include
+lib
+local
+py_coverage_command
